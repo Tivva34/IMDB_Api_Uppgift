@@ -7,7 +7,7 @@ export function renderTrailers(movie, num) {
 
     const trailerList = document.querySelectorAll(`.trailers__video`);
     const trailerArray = Array.from(trailerList);
-    
+
     document.querySelectorAll(`.trailers__arrow`).forEach(arrow => {
         arrow.addEventListener(`click`, (event) => {
             changeTrailer(event, trailerList, trailerArray);

@@ -4,7 +4,6 @@
 /* Variables */
 :root {
     --header-grey: #121212;
-    /* Primary BG bör vara din bakgrundsfärg */
     --primary-bg: #000000;
     --primary-white: #ffffff;
     --primary-grey: #1A1A1A;
@@ -18,6 +17,10 @@
     margin: 0;
 }
 
+p {
+    color: #f9f9f9;
+}
+
 body {
     background-color: var(--primary-bg);
     max-width: 100%;
@@ -28,6 +31,7 @@ body {
     max-width: 1180px;
     margin: 0 auto;
 }
+
 .center {
     margin: 0 auto;
 }
@@ -82,3 +86,121 @@ body {
     border: none;
     cursor: pointer;
 }
+
+/* CSS för att hantera filmkorten */
+#movie-cards-container,
+#cardContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card__poster {
+    min-width: auto;
+    height: 300px;
+}
+
+.movie-card__title {
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.movie-card__year {
+    font-size: .8rem;
+    color: #666;
+    margin: 5px 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Responsiv layout */
+@media (max-width: 1200px) {
+
+    #movie-cards-container,
+    #cardContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    #movie-cards-container,
+    #cardContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    #movie-cards-container,
+    #cardContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+
+    #movie-cards-container,
+    #cardContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* .movie-card {
+
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: var(--primary-white);
+}
+
+.movie-card__poster {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card__title {
+    color: var(--primary-white);
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.movie-card__year {
+    font-size: 1em;
+    color: #777;
+} */
